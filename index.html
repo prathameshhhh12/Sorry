@@ -1,2 +1,106 @@
-Current Date and Time (UTC - YYYY-MM-DD HH:MM:SS formatted): 2026-02-08 17:14:45
-Current User's Login: prathameshhhh12
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry Kajal ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #response {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>I'm Really Sorry, Kajal ❤️</h1>
+        <p>
+            I know I made a mistake...<br>
+            But you mean everything to me 🥺<br>
+            Will you forgive me, Kajal?<br>
+            And do you still love me?
+        </p>
+
+        <button class="yes" onclick="forgive()">Yes ❤️</button>
+        <button class="no" onmouseover="moveButton()">No 😢</button>
+
+        <h2 id="response"></h2>
+    </div>
+
+<script>
+    function forgive() {
+        document.getElementById("response").innerHTML = 
+        "Yayyy 🥰 Thank you, Kajal! I promise to be better ❤️ I love you forever!";
+    }
+
+    function moveButton() {
+        const button = document.querySelector(".no");
+        const x = Math.random() * (window.innerWidth - button.offsetWidth);
+        const y = Math.random() * (window.innerHeight - button.offsetHeight);
+        button.style.left = x + "px";
+        button.style.top = y + "px";
+    }
+</script>
+
+</body>
+</html>
