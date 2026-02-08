@@ -3,47 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Couple Photo</title>
+    <title>Love Hearts</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #ffe6e6;
+            text-align: center;
             font-family: Arial, sans-serif;
+            position: relative;
         }
-        .photo {
-            display: none;
-            animation: fadeIn 2s;
-            border: 5px solid #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        h1 {
+            color: #ff3366;
+            margin-top: 50px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .heart {
+            position: absolute;
+            background-color: #ff3366;
+            width: 20px;
+            height: 20px;
+            transform: rotate(45deg);
+            animation: float 3s infinite;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #ff6b6b;
-            color: white;
+        .heart:before,
+        .heart:after {
+            content: '';
+            background-color: #ff3366;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+        }
+        .heart:before {
+            position: absolute;
+            top: -10px;
+            left: 0;
+        }
+        .heart:after {
+            position: absolute;
+            left: 10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <button id="showPhoto">Yes</button>
-    <img src="data:image/jpeg;base64,YOUR_BASE64_ENCODED_IMAGE_HERE" alt="Couple Photo" class="photo" id="couplePhoto">
-
-    <script>
-        document.getElementById('showPhoto').addEventListener('click', function() {
-            const photo = document.getElementById('couplePhoto');
-            photo.style.display = 'block';
-        });
-    </script>
+    <h1>Love is in the air!</h1>
+    <p>Every day I fall more in love with you!</p>
+    <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 20%; animation-delay: 0.5s;"></div>
+    <div class="heart" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 40%; animation-delay: 1.5s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 60%; animation-delay: 2.5s;"></div>
+    <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 3.5s;"></div>
+    <div class="heart" style="left: 90%; animation-delay: 4s;"></div>
 </body>
 </html>
