@@ -3,104 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Sorry Kajal ❤️</title>
+    <title>Couple Photo</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            text-align: center;
-            color: white;
-            overflow: hidden;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
         }
-
-        .container {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-            max-width: 500px;
+        .photo {
+            display: none;
+            animation: fadeIn 2s;
+            border: 5px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
-
-        h1 {
-            font-size: 45px;
-            margin-bottom: 20px;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        p {
-            font-size: 22px;
-            margin-bottom: 30px;
-        }
-
         button {
-            padding: 12px 30px;
-            font-size: 18px;
-            border: none;
-            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
-            margin: 10px;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .yes {
-            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6b6b;
             color: white;
-        }
-
-        .no {
-            background-color: #f44336;
-            color: white;
-            position: absolute;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-        }
-
-        #response {
-            margin-top: 30px;
-            font-size: 20px;
         }
     </style>
 </head>
 <body>
+    <button id="showPhoto">Yes</button>
+    <img src="data:image/jpeg;base64,YOUR_BASE64_ENCODED_IMAGE_HERE" alt="Couple Photo" class="photo" id="couplePhoto">
 
-    <div class="container">
-        <h1>I'm Really Sorry, Kajal ❤️</h1>
-        <p>
-            I know I made a mistake...<br>
-            But you mean everything to me 🥺<br>
-            Will you forgive me, Kajal?<br>
-            And do you still love me?
-        </p>
-
-        <button class="yes" onclick="forgive()">Yes ❤️</button>
-        <button class="no" onmouseover="moveButton()">No 😢</button>
-
-        <h2 id="response"></h2>
-    </div>
-
-<script>
-    function forgive() {
-        document.getElementById("response").innerHTML = 
-        "Yayyy 🥰 Thank you, Kajal! I promise to be better ❤️ I love you forever!";
-    }
-
-    function moveButton() {
-        const button = document.querySelector(".no");
-        const x = Math.random() * (window.innerWidth - button.offsetWidth);
-        const y = Math.random() * (window.innerHeight - button.offsetHeight);
-        button.style.left = x + "px";
-        button.style.top = y + "px";
-    }
-</script>
-
+    <script>
+        document.getElementById('showPhoto').addEventListener('click', function() {
+            const photo = document.getElementById('couplePhoto');
+            photo.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
