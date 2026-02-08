@@ -3,62 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Hearts</title>
+    <title>Apology Page</title>
     <style>
         body {
-            background-color: #ffe6e6;
-            text-align: center;
-            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f0f0f0;
             position: relative;
+            overflow: hidden;
         }
-        h1 {
-            color: #ff3366;
-            margin-top: 50px;
+        .message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #28a745;
+            color: white;
+        }
+        .no {
+            background-color: #dc3545;
+            color: white;
+        }
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
         }
         .heart {
             position: absolute;
-            background-color: #ff3366;
             width: 20px;
             height: 20px;
-            transform: rotate(45deg);
-            animation: float 3s infinite;
+            background-color: red;
+            clip-path: polygon(50% 0%, 64% 35%, 100% 35%, 74% 55%, 82% 90%, 50% 70%, 18% 90%, 26% 55%, 0% 35%, 36% 35%);
+            animation: floating 5s infinite;
+            opacity: 0.7;
         }
-        .heart:before,
-        .heart:after {
-            content: '';
-            background-color: #ff3366;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-        }
-        .heart:before {
-            position: absolute;
-            top: -10px;
-            left: 0;
-        }
-        .heart:after {
-            position: absolute;
-            left: 10px;
-            top: 0;
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Love is in the air!</h1>
-    <p>Every day I fall more in love with you!</p>
-    <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
-    <div class="heart" style="left: 20%; animation-delay: 0.5s;"></div>
-    <div class="heart" style="left: 30%; animation-delay: 1s;"></div>
-    <div class="heart" style="left: 40%; animation-delay: 1.5s;"></div>
-    <div class="heart" style="left: 50%; animation-delay: 2s;"></div>
-    <div class="heart" style="left: 60%; animation-delay: 2.5s;"></div>
-    <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
-    <div class="heart" style="left: 80%; animation-delay: 3.5s;"></div>
-    <div class="heart" style="left: 90%; animation-delay: 4s;"></div>
+    <div class="message">I&apos;m Really Sorry, Kajal ❤️</div>
+    <button class="button yes" onclick="createHearts();">Yes</button>
+    <button class="button no">No</button>
+    <div class="hearts" id="heartsContainer"></div>
+    <script>
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                container.appendChild(heart);
+            }
+        }
+    </script>
 </body>
 </html>
